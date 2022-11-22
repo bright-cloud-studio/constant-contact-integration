@@ -22,7 +22,7 @@
     "extra": {
         "contao": {
             "sources": {
-                "system/modules/constant-contact-integration": "system/modules/constant-contact-integration"
+                "system/modules/constant_contact_integration": "system/modules/constant_contact_integration"
             }
         }
     },
