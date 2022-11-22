@@ -9,3 +9,6 @@
  * @link       https://www.brightcloudstudio.com/
  * @license    http://opensource.org/licenses/lgpl-3.0.html
 **/
+
+/* Crons */
+$GLOBALS['TL_CRON']['minutely'][] = ['ConstantContactIntegration\EventListener', 'refreshToken'];
