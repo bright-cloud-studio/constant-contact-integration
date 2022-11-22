@@ -1,0 +1,30 @@
+{
+    "name":"bright-cloud-studio/constant-contact-integration",
+    "description":"Adds Constant Contact integration to Contao's Form system",
+    "homepage": "http://brightcloudstudio.com/",
+    "keywords":["constant", "contact", "integration", "bright", "cloud", "studio"],
+    "type":"contao-module",
+    "license":"LGPL-3.0-or-later",
+    "authors":[
+        {
+            "name":"Bright Cloud Studio",
+            "homepage":"https://brightcloudstudio.com"
+        }
+    ],
+    "require":{
+        "php": "^8.1",
+        "contao/core-bundle": "^4.13",
+        "phpfui/constantcontact": "V22.10.1"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "system/modules/constant-contact-integration": "system/modules/constant-contact-integration"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
