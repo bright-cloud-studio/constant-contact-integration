@@ -15,6 +15,6 @@ class EventListener extends System
         // Do stuffs here
 
          // Testing the controller log
-        \Controller::log('CCI: Token refreshed - ' . $tokenVariable . '.', __CLASS__ . '::' . __FUNCTION__, 'GENERAL');
+        //\Controller::log('CCI: Token refreshed - ' . $tokenVariable . '.', __CLASS__ . '::' . __FUNCTION__, 'GENERAL');
     }
 }
