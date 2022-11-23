@@ -15,9 +15,6 @@ class EventListener extends System
         // Do stuffs here
         $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $tokenURL);
         
-        $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $tokenURL);
-        
-        
         \header('location: ' . $client->getAuthorizationURL());
         
         $client->aquireAccessToken($_GET)
