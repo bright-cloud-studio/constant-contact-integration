@@ -23,6 +23,6 @@ ClassLoader::addClasses(array
 TemplateLoader::addFiles(array
 (
     // Front end module to make initial authorization
-   	'mod_constant_contact_authorize'                => 'system/modules/contao_directory/templates/modules'
+   	'mod_constant_contact_authorize'                => 'system/modules/constant_contact_integration/templates/modules'
 ));
 
