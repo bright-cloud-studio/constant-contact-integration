@@ -11,7 +11,7 @@
 **/
 
 /* Front end modules */
-$GLOBALS['FE_MOD']['constant_contact_integration']['constant_contact_authorize'] 	= 'Bcs\Module\DirectoryList';
+$GLOBALS['FE_MOD']['constant_contact_integration']['constant_contact_authorize'] 	= 'Bcs\Module\ConstantContactAuthorize';
 
 /* Crons */
 $GLOBALS['TL_CRON']['minutely'][] = ['ConstantContactIntegration\EventListener', 'refreshToken'];
