@@ -13,5 +13,16 @@
 /* Register Classes */
 ClassLoader::addClasses(array
 (
-	'ConstantContactIntegration\EventListener' => 'system/modules/constant_contact_integration/src/EventListener.php'
+    // This is the listing module
+    'Bcs\Module\ConstantContactAuthorize'           => 'system/modules/constant_contact_integration/library/Bcs/Module/ConstantContactAuthorize.php',
+    // This is the Cron listener
+	'ConstantContactIntegration\EventListener'      => 'system/modules/constant_contact_integration/src/EventListener.php'
 ));
+
+/* Register the templates */
+TemplateLoader::addFiles(array
+(
+    // Front end module to make initial authorization
+   	'mod_constant_contact_authorize'                => 'system/modules/contao_directory/templates/modules'
+));
+
