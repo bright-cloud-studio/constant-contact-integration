@@ -17,7 +17,7 @@ class EventListener extends System
         
         \header('location: ' . $client->getAuthorizationURL());
         
-        $client->aquireAccessToken($_GET)
+        $client->aquireAccessToken($_GET);
         // Save these in DB
         //$client->accessToken;
         //$client->refreshToken;
