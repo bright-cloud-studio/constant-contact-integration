@@ -23,6 +23,10 @@ class EventListener extends System
         
         
         // refresh our tokens
+        $redirectURI = 'https://framework.brightcloudstudioserver.com/cci_auth.php';
+        $apiKey = 'c58a64d0-f0b1-4ba0-a9c9-699d50d1df4c';
+        $secret = 'VuMhHswFzPHsUe4YtV7VtA';
+        
         $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
         $client->accessToken = $token_access;
         $client->refreshToken = $token_refresh;
