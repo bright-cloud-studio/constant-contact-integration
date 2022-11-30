@@ -18,7 +18,9 @@ ClassLoader::addClasses(array
     // This is the Cron listener
 	'ConstantContactIntegration\EventListener'      => 'system/modules/constant_contact_integration/src/EventListener.php',
     // The Listings section in the back end
-	'Bcs\Backend\ConstantContactBackend'            => 'system/modules/constant_contact_integration/library/Bcs/Backend/ConstantContactBackend.php'
+	'Bcs\Backend\ConstantContactBackend'            => 'system/modules/constant_contact_integration/library/Bcs/Backend/ConstantContactBackend.php',
+    // hook when processing form to enter our listing into db
+    'Bcs\Handler'                                   => 'system/modules/constant_contact_integration/Lbrary/Bcs/Handler.php'
 ));
 
 /* Register the templates */
