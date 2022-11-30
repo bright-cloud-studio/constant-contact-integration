@@ -9,11 +9,16 @@
  * @filesource
  */
 
+ /* Extend the tl_news palettes */
+$GLOBALS['TL_DCA']['tl_form']['palettes']['default'] = str_replace(';{expert_legend:hide}', ';{cci_legend},cci_list;{expert_legend:hide}', $GLOBALS['TL_DCA']['tl_form']['palettes']['default']);
+
 /* Add fields to tl_user */
 $GLOBALS['TL_DCA']['tl_form']['fields']['state'] = array
 (
-  'sorting'                 => true,
-  'inputType'               => 'text',
-  'eval'                    => array('includeBlankOption'=>true, 'feEditable'=>true, 'feViewable'=>true, 'feGroup'=>'address', 'tl_class'=>'w50'),
-  'sql'                     => "varchar(64) NOT NULL default ''"
+    'label'                     => &$GLOBALS['TL_LANG']['tl_form']['cci_list'],
+    'inputType'                 => 'select',
+    'default'                   => '',
+    'options_callback'          => array('Bcs\Backend\ConstantContactBackend', 'optionsLists'),
+    'eval'                      => array('includeBlankOption'=>false, 'mandatory'=>false, 'chosen'=>true, 'tl_class'=>'w50'),
+    'sql'                       => "varchar(255) NOT NULL default ''"
 );
