@@ -10,12 +10,14 @@ class Handler
 
     public function onProcessForm($submittedData, $formData, $files, $labels, $form)
     {
-      if($formData['formID'] == 'directory_submission') {
-
-
-      }
-      
-      
-      
+        
+        // if this form has a CC list associated with it
+        if($formData['cci_list'] != '') {
+            
+            echo "CC Form: " . $formData['cci_list'];
+            die();
+        }
+        
     }
+    
 }
