@@ -30,7 +30,7 @@ class EventListener extends System
         $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
         $client->accessToken = $token_access;
         $client->refreshToken = $token_refresh;
-        $client->refreshToken();3
+        $client->refreshToken();
         
         
         // save refreshed tokens
