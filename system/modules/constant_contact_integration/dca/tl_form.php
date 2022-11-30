@@ -13,7 +13,7 @@
 $GLOBALS['TL_DCA']['tl_form']['palettes']['default'] = str_replace(';{expert_legend:hide}', ';{cci_legend},cci_list;{expert_legend:hide}', $GLOBALS['TL_DCA']['tl_form']['palettes']['default']);
 
 /* Add fields to tl_user */
-$GLOBALS['TL_DCA']['tl_form']['fields']['state'] = array
+$GLOBALS['TL_DCA']['tl_form']['fields']['cci_list'] = array
 (
     'label'                     => &$GLOBALS['TL_LANG']['tl_form']['cci_list'],
     'inputType'                 => 'select',
