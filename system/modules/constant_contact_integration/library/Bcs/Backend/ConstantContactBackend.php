@@ -16,7 +16,7 @@ use Contao\DataContainer;
 
 class ConstantContactBackend extends \Backend
 {
-    
+    // Grab our Contact Lists from Constant Contact and display them as a select
     public function optionsLists() {
 
          // Grab our stored tokens from the text files
@@ -50,4 +50,27 @@ class ConstantContactBackend extends \Backend
         // return our stored results
 		return $arrLists;
 	}
+    
+    // Display a select of Contact fields and select which on to link this form field to
+    public function optionsLists() {
+        return array(
+            'address_street' => 'address_street',
+            'address_city' => 'address_city',
+            'address_state' => 'address_state',
+            'address_postal_code' => 'address_postal_code',
+            'address_country' => 'address_country',
+            'anniversary' => 'anniversary',
+            'birthday_day' => 'birthday_day',
+            'birthday_month' => 'birthday_month',
+            'company_name' => 'company_name',
+            'email_address' => 'email_address',
+            'first_name' => 'first_name',
+            'job_title' => 'job_title',
+            'last_name' => 'last_name',
+            'phone_numbers_home' => 'phone_numbers_home',
+            'phone_numbers_work' => 'phone_numbers_work',
+            'phone_numbers_mobile' => 'phone_numbers_mobile',
+            'phone_numbers_other' => 'phone_numbers_other'
+        );
+    }
 }
