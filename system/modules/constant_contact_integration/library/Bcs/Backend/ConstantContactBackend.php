@@ -39,9 +39,10 @@ class ConstantContactBackend extends \Backend
         
         // array to store our results until they are returned
         $arrLists = [];
-        
+
         foreach($lists['lists'] as $entry){
-            $arrLists[$entry['name']] = $entry['name'];
+            
+            $arrLists[$entry['list_id']] = $entry['name'];
         }
         
         // sort the array alphabetically ascending
