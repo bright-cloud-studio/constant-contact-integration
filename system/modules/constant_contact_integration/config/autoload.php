@@ -20,7 +20,7 @@ ClassLoader::addClasses(array
     // The Listings section in the back end
 	'Bcs\Backend\ConstantContactBackend'            => 'system/modules/constant_contact_integration/library/Bcs/Backend/ConstantContactBackend.php',
     // hook when processing form to enter our listing into db
-    'Bcs\Handler'                                   => 'system/modules/constant_contact_integration/Lbrary/Bcs/Handler.php'
+    'Bcs\Handler'                                   => 'system/modules/constant_contact_integration/library/Bcs/Handler.php'
 ));
 
 /* Register the templates */
