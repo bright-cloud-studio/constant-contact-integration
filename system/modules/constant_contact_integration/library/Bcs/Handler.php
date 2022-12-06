@@ -14,7 +14,6 @@ class Handler
         // if this form has a CC list associated with it
         if($formData['cci_list'] != '') {
             
-
             // Grab our stored tokens from the text files
             $token_access = file_get_contents('token_access.txt');
             $token_refresh = file_get_contents('token_refresh.txt');
@@ -29,10 +28,20 @@ class Handler
             $client->accessToken = $token_access;
             $client->refreshToken = $token_refresh;
             
-            // Stores details about our contact
+            // set up our Constant Contact parameters
             $params = [];
-            $params['email_address'] = 'mark@brightcloudstudio.com';
             $params['list_memberships'] = array($formData['cci_list']);
+            
+            // loop through all this forms fields
+            $result = Database::getInstance()->prepare("SELECT * FROM tl_form_field WHERE pid='". $formData['id'] ."'")->execute();
+            while($result->next())
+            {
+                // if this form field has a Constant Contact field linked
+                if($result->cci_linked_field != '') {
+                    // set the linked field to the parameters we are going to pass to Constant Contact
+                    $params[$result->cci_linked_field] = $submittedData[$result->name];
+                }
+            }
 
             // Create a Contact object using the details from above
             $contact = new \PHPFUI\ConstantContact\Definition\ContactCreateOrUpdateInput($params);
@@ -40,11 +49,6 @@ class Handler
             // Attempt to "signup" this new Contact
             $signup = new \PHPFUI\ConstantContact\V3\Contacts\SignUpForm($client);
             $response = $signup->post($contact);
-            
-            // View our response
-            echo "Signup:<br>" . var_dump($response) . "<br>";
-            
-            die();
         }
         
     }
