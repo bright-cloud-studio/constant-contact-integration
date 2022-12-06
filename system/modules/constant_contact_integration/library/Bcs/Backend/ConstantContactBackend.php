@@ -55,6 +55,7 @@ class ConstantContactBackend extends \Backend
     // Display a select of Contact fields and select which on to link this form field to
     public function optionsFields() {
         return array(
+            '' => '',
             'address_street' => 'address_street',
             'address_city' => 'address_city',
             'address_state' => 'address_state',
