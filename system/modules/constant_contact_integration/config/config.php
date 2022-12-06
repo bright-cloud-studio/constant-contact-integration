@@ -14,7 +14,7 @@
 $GLOBALS['FE_MOD']['constant_contact_integration']['constant_contact_authorize'] 	= 'Bcs\Module\ConstantContactAuthorize';
 
 /* Crons */
-$GLOBALS['TL_CRON']['minutely'][] = ['ConstantContactIntegration\EventListener', 'refreshToken'];
+$GLOBALS['TL_CRON']['hourly'][] = ['ConstantContactIntegration\EventListener', 'refreshToken'];
 
 /* Hooks */
 $GLOBALS['TL_HOOKS']['processFormData'][]      = array('Bcs\Handler', 'onProcessForm');
