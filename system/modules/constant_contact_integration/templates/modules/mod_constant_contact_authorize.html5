@@ -1,3 +1,28 @@
-<div class="mod_constant_contact_authorize size100">
-  THIS IS THE AUTHORIZE MOD
-</div>
+<?php
+
+	// Set our Constant Contact values
+	$redirectURI = 'https://framework.brightcloudstudioserver.com/cci-authorize.html';
+	$apiKey = 'c58a64d0-f0b1-4ba0-a9c9-699d50d1df4c';
+	$secret = 'VuMhHswFzPHsUe4YtV7VtA';
+	
+	// Initialize the php library
+	$client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
+	
+	if (empty($_GET)) {
+		// no data passed by get
+		\header('location: ' . $client->getAuthorizationURL());
+	} else {
+		
+		$client->acquireAccessToken($_GET);
+		
+		$file_handle = fopen($_SERVER['DOCUMENT_ROOT'] . '/token_access.txt', 'w');
+		fwrite($file_handle, $client->accessToken);
+		
+		$file_handle = fopen($_SERVER['DOCUMENT_ROOT'] . '/token_refresh.txt', 'w');
+		fwrite($file_handle, $client->refreshToken);
+	
+	}
+
+?>
+
+
