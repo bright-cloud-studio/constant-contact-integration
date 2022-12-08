@@ -11,7 +11,7 @@
 
  /* Extend the tl_news palettes */
 $GLOBALS['TL_DCA']['tl_form_field']['palettes']['text'] = str_replace(';{invisible_legend:hide}', ';{cci_linked_field_legend},cci_linked_field;{invisible_legend:hide}', $GLOBALS['TL_DCA']['tl_form_field']['palettes']['text']);
-$GLOBALS['TL_DCA']['tl_form_field']['palettes']['select'] = str_replace(';{invisible_legend:hide}', ';{cci_express_permission_legend},cci_express_permission;{invisible_legend:hide}', $GLOBALS['TL_DCA']['tl_form_field']['palettes']['select']);
+$GLOBALS['TL_DCA']['tl_form_field']['palettes']['checkbox'] = str_replace(';{invisible_legend:hide}', ';{cci_express_permission_legend},cci_express_permission;{invisible_legend:hide}', $GLOBALS['TL_DCA']['tl_form_field']['palettes']['checkbox']);
 
 /* Add fields to tl_user */
 $GLOBALS['TL_DCA']['tl_form_field']['fields']['cci_linked_field'] = array
