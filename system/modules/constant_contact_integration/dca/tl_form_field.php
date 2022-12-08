@@ -30,5 +30,5 @@ $GLOBALS['TL_DCA']['tl_form_field']['fields']['cci_express_permission'] = array
     'inputType'                 => 'checkbox',
     'default'                   => '',
     'eval'                      => array('mandatory'=>false, 'multiple'=>false, 'tl_class'=>'w50'),
-	'sql'                       => ['type' => 'blob']
+	'sql'                       => "varchar(255) NOT NULL default ''"
 );
