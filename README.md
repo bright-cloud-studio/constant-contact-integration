@@ -6,5 +6,5 @@ This package connects Contao's Forms to Constant Contact's API. Create a Form an
 - Step One:
 First things first, you will need to establish a connection with Constant Contact. To do this you will need to set up a page specifically for authorizing the connection. On Contao, set up a page for this purpose and copy its unique URL. This will be our Redirect URL.
 
-![Get our Redirect URL](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/cci_1.png)
+![Get our Redirect URL](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_1.png)
 
