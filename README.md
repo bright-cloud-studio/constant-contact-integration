@@ -13,3 +13,7 @@ Now, with a developer account for Constant Contact, we need to see up our Applic
 
 ![Create our Application](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_2.png)
 
+- Step Three:
+Within Contao, create a new "Constant Contact - Authorize" frontend module and fill in the API Key, Secret and Redirect URL.
+
+![Authorize Module](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_3.png)
