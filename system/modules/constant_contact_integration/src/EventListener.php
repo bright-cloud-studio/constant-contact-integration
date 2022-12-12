@@ -9,6 +9,8 @@ class EventListener extends System
     public function refreshToken(): void
     {
         
+        session_start();
+        
         // get accessToken
         $token_access = file_get_contents('token_access.txt');
         // get refreshToken
