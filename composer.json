@@ -14,7 +14,7 @@
     "require":{
         "php": "^8.1",
         "contao/core-bundle": "^4.13",
-        "phpfui/constantcontact": "V22.10.1"
+        "phpfui/constantcontact": "V22.12.0"
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0"
