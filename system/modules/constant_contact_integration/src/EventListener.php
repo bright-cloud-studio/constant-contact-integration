@@ -17,9 +17,21 @@ class EventListener extends System
         $token_refresh = file_get_contents('token_refresh.txt');
 
         // refresh our tokens
-        $redirectURI = 'https://framework.brightcloudstudioserver.com/cci_auth.php';
-        $apiKey = 'c58a64d0-f0b1-4ba0-a9c9-699d50d1df4c';
-        $secret = 'VuMhHswFzPHsUe4YtV7VtA';
+        $redirectURI = '';
+        $apiKey = '';
+        $secret = '';
+        
+         // get our CCI info from the db
+        $cci_db = Database::getInstance()->prepare("SELECT * FROM tl_module")->execute();
+        while($cci_db->next())
+        {
+            // if this form field has a Constant Contact field linked
+            if($cci_db->type != 'constant_contact_authorize') {
+                $redirectURI = $cci_db->cci_url;
+                $apiKey = $cci_db->cci_key;
+                $secret = $cci_db->cci_secret;
+            }
+        }
         
         $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
         $client->accessToken = $token_access;
