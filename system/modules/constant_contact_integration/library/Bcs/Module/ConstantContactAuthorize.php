@@ -62,8 +62,9 @@ class ConstantContactAuthorize extends \Contao\Module
     protected function compile()
     {
         
-        // add js file for filter functions
-	    //$GLOBALS['TL_BODY'][] = '<script src="system/modules/contao_directory/assets/js/directory_list.js"></script>';
+        // Include our JS with a unique code to prefent caching
+        $rand_ver = rand(1,9999);
+        $GLOBALS['TL_BODY'][] = '<script src="system/modules/constant_contact_integration/assets/js/constant_contact_integration.js?v='.$rand_ver.'"></script>';
 
 	}
 } 
