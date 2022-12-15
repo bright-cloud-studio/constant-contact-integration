@@ -1,19 +1,15 @@
-    // this is the big bad booty daddy that will generate our Transactions on Google Sheets and mark our Work Assignment as Processed
-    function finalizeConnection(datastring){
-
-        alert("DING");
-        
-        // trigger this function when our form runs
+    
+    // Pass our $_GET values to the authorize script to establish the connection to the Constant Contact Oauth2 API
+    function finalizeConnection(code, state){
         $.ajax({
-            url: '/system/modules/gai_invoices/assets/php/action.api.authorize.php',
+            url: '/system/modules/constant_contact_integration/assets/php/action.api.authorize.php',
             type: 'GET',
-            data: datastring,
+            data:{ code: code, state: state},
             success:function(result){
-                // redirect us to the success page
-                $(".message").html("Success");
+                $(".message").html(result);
             },
             error:function(result){
-                $(".message").html("Fail");
+                $(".message").html("There was an issue trying to establish the connection to the Constant Contact Oauth2 API");
             }
         });
         
