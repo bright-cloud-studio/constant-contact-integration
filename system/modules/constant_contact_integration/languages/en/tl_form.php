@@ -15,3 +15,4 @@ $GLOBALS['TL_LANG']['tl_form']['cci_legend'] = 'Constant Contact Integration Set
 
 /* Fields */
 $GLOBALS['TL_LANG']['tl_form']['cci_list']          = array('Contact List', 'Select which list to associate with this form');
+$GLOBALS['TL_LANG']['tl_form']['cci_implied']       = array('Implied Permission', 'Will the user be giving implied permission when filling out this form');
