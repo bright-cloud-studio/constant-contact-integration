@@ -22,6 +22,7 @@ $GLOBALS['TL_DCA']['tl_form']['fields']['cci_list'] = array
     'eval'                      => array('includeBlankOption'=>false, 'mandatory'=>false, 'chosen'=>true, 'tl_class'=>'w50'),
     'sql'                       => "varchar(255) NOT NULL default ''"
 );
+/* Field to skip the mandatory checkbox and give implied permission */
 $GLOBALS['TL_DCA']['tl_form']['fields']['cci_implied'] = array
 (
     'label'                     => &$GLOBALS['TL_LANG']['tl_form']['cci_implied'],
