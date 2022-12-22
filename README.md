@@ -1,10 +1,13 @@
 # Bright Cloud Studio's Constant Contact Integration
-This package connects Contao's Forms to Constant Contact's API. Create a Form and select which List to import data into. Add fields to the form and link them to specific Constant Contact fields. Add a checkbox to make sure the user gives express permission to be added to the contact list.
+This package will establish a connection to the Constant Contact API from Contao, allow you to link a Contao Form to a Constant Contact List and Contao Form Fields to Constant Contact Fields. You can either check an option for a form with implied permission, like a simple form with just an email field and a submit button, or express permission by adding a checkbox to your form. Follow the directions below to get started.
+
+NOTE: To keep your Oauth2 connection alive you will need to disable the default Contao Cron system in the Settings page by checking the "Disable the command scheduler" option and manually set up a cron call using the Web URL on your server. For more information check the Contao Manual here: https://docs.contao.org/dev/framework/cron/#web-url
+
 
 ## Setup Directions
 
 - Step One:
-First things first, you will need to establish a connection with Constant Contact. To do this you will need to set up a page specifically for authorizing the connection. On Contao, set up a page for this purpose and copy its unique URL. This will be our Redirect URL.
+First things first, you will need to establish a connection with Constant Contact. To do this you will need to set up a page specifically for authorizing the connection. On Contao, set up a page for this purpose and copy its' unique URL. This will be our Redirect URL.
 
 ![Get our Redirect URL](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_1.png)
 
