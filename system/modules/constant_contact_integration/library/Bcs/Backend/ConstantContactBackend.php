@@ -29,7 +29,7 @@ class ConstantContactBackend extends \Backend
         $secret = '';
         
          // get our CCI info from the db
-        $cci_db = Database::getInstance()->prepare("SELECT * FROM tl_module")->execute();
+        $cci_db = \Database::getInstance()->prepare("SELECT * FROM tl_module")->execute();
         while($cci_db->next())
         {
             // if this form field has a Constant Contact field linked
