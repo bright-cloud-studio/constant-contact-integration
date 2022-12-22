@@ -38,6 +38,10 @@ class Handler
                      if($submittedData[$result->name] != "")
                         $has_permission = 1;
                 }
+                // if this form has implied permission checked
+                if($formData['cci_implied'] == 'yes') {
+                    $has_permission = 1;
+                }
                    
             }
             
