@@ -25,3 +25,16 @@ Within Contao, create a new "Constant Contact - Authorize" frontend module and f
 Add the newly created frontend module to the authorize page we set up previously, then view that page. Once you view the page a link titled "Click here to finalize connection" will show, click it. If everything wen't as expected a message "You have successfully established a connection with the Constant Contact API" will display. To confirm everything worked, in your servers file browser navigate to the "public_html\web" folder and you should find two newly created files "token_access.txt" and "token_refresh.txt".
 
 ![Authorization Confirmation](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_4.jpg)
+
+## Congradulations! You have successfully connected your Contao installation with the Constant Contact API.
+
+Now that you have successfully established your connection, let me explain how to use it.
+
+- Step One:
+In the Contao Backend, when viewing the Settings page for a Form you will see two new options towards the bottom of the page.
+
+![Form Settings](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_5.jpg)
+
+The first is "Contact List", this will select which Contact List the data will be added to. Select the list you wish to create a new contact in.
+
+Second is "Implied Permission". This option is for forms that make it clear the user is signing up to be emailed. Select "Yes" if your form doesn't have a checkbox for the user to choose to be added to a mailing list.
