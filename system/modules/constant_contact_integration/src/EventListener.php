@@ -3,6 +3,7 @@
 namespace ConstantContactIntegration;
 
 use Contao\System;
+use Contao\Database;
 
 class EventListener extends System
 {
@@ -26,7 +27,7 @@ class EventListener extends System
         while($cci_db->next())
         {
             // if this form field has a Constant Contact field linked
-            if($cci_db->type != 'constant_contact_authorize') {
+            if($cci_db->type == 'constant_contact_authorize') {
                 $redirectURI = $cci_db->cci_url;
                 $apiKey = $cci_db->cci_key;
                 $secret = $cci_db->cci_secret;
