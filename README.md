@@ -3,6 +3,17 @@ This package will establish a connection to the Constant Contact API from Contao
 
 NOTE: To keep your OAuth2 connection alive you will need to disable the default Contao Cron system in the Settings page by checking the "Disable the command scheduler" option and manually set up a cron call using the Web URL on your server. For more information check the Contao Manual here: https://docs.contao.org/dev/framework/cron/#web-url
 
+First, activate the "Disable the command scheduler" option in Contao's Settings page
+
+![Disable Cron in Contao](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/warning_1.jpg)
+
+Then, manually set up a Cron job to Contao's cron URl and have it trigger minutely. Your OAuth2 keys will refresh hourly.
+
+![Manual Cron](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/warning_2.jpg)
+
+
+
+
 
 ## Setup Directions
 
