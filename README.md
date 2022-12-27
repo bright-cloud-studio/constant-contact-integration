@@ -33,7 +33,7 @@ Within Contao, create a new "Constant Contact - Authorize" frontend module and f
 ![Authorize Module](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_3.png)
 
 - Step Four:
-Add the newly created frontend module to the authorize page we set up previously, then view that page. Once you view the page a link titled "Click here to finalize connection" will show, click it. If everything wen't as expected a message "You have successfully established a connection with the Constant Contact API" will display. To confirm everything worked, in your servers file browser navigate to the "public_html\web" folder and you should find two newly created files "token_access.txt" and "token_refresh.txt".
+Add the newly created frontend module to the authorize page we set up previously, then view that page. Once you view the page a link titled "Click here to finalize connection" will show, click it. If everything went as expected a message "You have successfully established a connection with the Constant Contact API" will display. To confirm everything worked, in your servers file browser navigate to the "public_html\web" folder and you should find two newly created files "token_access.txt" and "token_refresh.txt".
 
 ![Authorization Confirmation](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_4.jpg)
 
