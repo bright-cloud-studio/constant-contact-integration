@@ -23,7 +23,7 @@ First things first, you will need to establish a connection with Constant Contac
 ![Get our Redirect URL](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_1.png)
 
 - Step Two:
-Now, after creating a developer account for Constant Contact, we need to set up our Application. Create a new app, for "Application OAuth2 Settings" select the option "Authorization Code Flow and Implicit Flow" and for refresh token type choose "Rotating Refresh Token". Use the Redirect URL we got from Step One. Copy our API Key, Secret and Redirect URL and move onto Step Three.
+After creating a developer account for Constant Contact, we need to set up our Application. Create a new app, for "Application OAuth2 Settings" select the option "Authorization Code Flow and Implicit Flow" and for refresh token type choose "Rotating Refresh Token". Use the Redirect URL we got from Step One. Copy our API Key, Secret and Redirect URL and move onto Step Three.
 
 ![Create our Application](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_2.png)
 
