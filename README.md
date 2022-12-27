@@ -12,7 +12,7 @@ First things first, you will need to establish a connection with Constant Contac
 ![Get our Redirect URL](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_1.png)
 
 - Step Two:
-Now, with a developer account for Constant Contact, we need to see up our Application. Create a new app and use the Redirect URL we got from Step One. Copy our API Key, Secret and Redirect URL and move onto Step Three.
+Now, with a developer account for Constant Contact, we need to see up our Application. Create a new app, for "Application OAuth2 Settings" select the option "Authorization Code Flow and Implicit Flow" and for refresh token type choose "Rotating Refresh Token". Use the Redirect URL we got from Step One. Copy our API Key, Secret and Redirect URL and move onto Step Three.
 
 ![Create our Application](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_2.png)
 
@@ -20,3 +20,6 @@ Now, with a developer account for Constant Contact, we need to see up our Applic
 Within Contao, create a new "Constant Contact - Authorize" frontend module and fill in the API Key, Secret and Redirect URL.
 
 ![Authorize Module](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_3.png)
+
+- Step Four:
+Add the newly created frontend module to the authorize page we set up previously, then view that page. Once you view the page a link titled "Click here to finalize connection" will show, click it. If everything wen't as expected a message "You have successfully established a connection with the Constant Contact API" will display.
