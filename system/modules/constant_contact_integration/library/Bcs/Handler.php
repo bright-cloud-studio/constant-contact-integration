@@ -80,9 +80,6 @@ class Handler
                 // Attempt to "signup" this new Contact
                 $signup = new \PHPFUI\ConstantContact\V3\Contacts\SignUpForm($client);
                 $response = $signup->post($contact);
-                
-                echo "Response: " . print_r($response);
-                die();
             }
 
         }
