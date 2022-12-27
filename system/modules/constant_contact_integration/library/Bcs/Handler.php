@@ -10,7 +10,7 @@ class Handler
 
     public function onProcessForm($submittedData, $formData, $files, $labels, $form)
     {
-        
+
         // if this form has a CC list associated with it
         if($formData['cci_list'] != '') {
             
@@ -62,7 +62,7 @@ class Handler
                 while($cci_db->next())
                 {
                     // if this form field has a Constant Contact field linked
-                    if($cci_db->type != 'constant_contact_authorize') {
+                    if($cci_db->type == 'constant_contact_authorize') {
                         $redirectURI = $cci_db->cci_url;
                         $apiKey = $cci_db->cci_key;
                         $secret = $cci_db->cci_secret;
@@ -80,6 +80,9 @@ class Handler
                 // Attempt to "signup" this new Contact
                 $signup = new \PHPFUI\ConstantContact\V3\Contacts\SignUpForm($client);
                 $response = $signup->post($contact);
+                
+                echo "Response: " . print_r($response);
+                die();
             }
 
         }
