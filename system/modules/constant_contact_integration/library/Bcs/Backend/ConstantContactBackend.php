@@ -20,8 +20,8 @@ class ConstantContactBackend extends \Backend
     public function optionsLists() {
 
          // Grab our stored tokens from the text files
-        $token_access = file_get_contents('token_access.txt');
-        $token_refresh = file_get_contents('token_refresh.txt');
+        $token_access = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/token_access.txt');
+        $token_refresh = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/token_refresh.txt');
         
         // Constant Contact API values
         $redirectURI = '';
@@ -33,7 +33,7 @@ class ConstantContactBackend extends \Backend
         while($cci_db->next())
         {
             // if this form field has a Constant Contact field linked
-            if($cci_db->type != 'constant_contact_authorize') {
+            if($cci_db->type == 'constant_contact_authorize') {
                 $redirectURI = $cci_db->cci_url;
                 $apiKey = $cci_db->cci_key;
                 $secret = $cci_db->cci_secret;
@@ -48,6 +48,7 @@ class ConstantContactBackend extends \Backend
         // get ours lists
         $listEndPoint = new \PHPFUI\ConstantContact\V3\ContactLists($client);
         $lists = $listEndPoint->get();
+
         
         // array to store our results until they are returned
         $arrLists = [];
@@ -56,7 +57,7 @@ class ConstantContactBackend extends \Backend
             
             $arrLists[$entry['list_id']] = $entry['name'];
         }
-        
+
         // sort the array alphabetically ascending
         asort($arrLists);
         
