@@ -26,7 +26,11 @@ Add the newly created frontend module to the authorize page we set up previously
 
 ![Authorization Confirmation](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_4.jpg)
 
+
+
 ## Congradulations! You have successfully connected your Contao installation with the Constant Contact API.
+
+
 
 Now that you have successfully established your connection, let me explain how to use it.
 
@@ -38,3 +42,10 @@ In the Contao Backend, when viewing the Settings page for a Form you will see tw
 The first is "Contact List", this will select which Contact List the data will be added to. Select the list you wish to create a new contact in.
 
 Second is "Implied Permission". This option is for forms that make it clear the user is signing up to be emailed. Select "Yes" if your form doesn't have a checkbox for the user to choose to be added to a mailing list.
+
+- Step Two:
+Now, when viewing a Settings page for a Form Field you will find a new option "Linked Field"
+
+![Linked Field](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_6.jpg)
+
+This will link the form field to a Constant Contact field. Whichever field you select, that is where this form field's data will be entered within Constant Contact.
