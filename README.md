@@ -49,3 +49,13 @@ Now, when viewing a Settings page for a Form Field you will find a new option "L
 ![Linked Field](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_6.jpg)
 
 This will link the form field to a Constant Contact field. Whichever field you select, that is where this form field's data will be entered within Constant Contact.
+
+- Step Four (Optional):
+In the event you selected "No" for the "Implied Permission" option, you will need to add a checkbox so the user can give you express permission to be added to a mailing list. So, when you add a Checkbox form field a new option "Express Permission" will be shown. Activate the option if you do not have implied permission on your form.
+
+![Linked Field](https://raw.githubusercontent.com/bright-cloud-studio/constant-contact-integration/main/images/step_7.jpg)
+
+
+
+
+That is all for now. View your form on the front end and submit it, then check Constant Contact to make sure your data came over. This is the first release and things aren't as clean or neat as I would like. I will be updating this until it is clean and stable, the code and the directions. For now, get started and have fun.
