@@ -1,10 +1,28 @@
 <?php
 
-	// Set our Constant Contact values
-	$redirectURI = 'https://framework.brightcloudstudioserver.com/cci-authorize.html';
-	$apiKey = 'c58a64d0-f0b1-4ba0-a9c9-699d50d1df4c';
-	$secret = 'VuMhHswFzPHsUe4YtV7VtA';
+	// start our PHP session
+	session_start();
+	// Pulls in Composer
+	require_once '../vendor/autoload.php'; 
 	
+	// Set our Constant Contact values
+	$redirectURI = '';
+	$apiKey = '';
+	$secret = '';
+	
+
+	 // get our CCI info from the db
+    $cci_db = \Database::getInstance()->prepare("SELECT * FROM tl_module")->execute();
+    while($cci_db->next())
+    {
+        // if this form field has a Constant Contact field linked
+        if($cci_db->type == 'constant_contact_authorize') {
+            $redirectURI = $cci_db->cci_url;
+            $apiKey = $cci_db->cci_key;
+            $secret = $cci_db->cci_secret;
+        }
+    }
+    
 	// Initialize the php library
 	$client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
 	
@@ -12,17 +30,13 @@
 		// no data passed by get
 		\header('location: ' . $client->getAuthorizationURL());
 	} else {
-		
-		$client->acquireAccessToken($_GET);
-		
-		$file_handle = fopen($_SERVER['DOCUMENT_ROOT'] . '/token_access.txt', 'w');
-		fwrite($file_handle, $client->accessToken);
-		
-		$file_handle = fopen($_SERVER['DOCUMENT_ROOT'] . '/token_refresh.txt', 'w');
-		fwrite($file_handle, $client->refreshToken);
 	
+		?>
+		
+		<a onClick='finalizeConnection("<?= $_GET["code"] ?>", "<?= $_GET["state"] ?>", "<?= $apiKey ?>", "<?= $secret ?>", "<?= $redirectURI ?>");'>Click here to finalize connection</a>
+		
+		<div class="message"></div>
+		<?php
 	}
 
 ?>
-
-
