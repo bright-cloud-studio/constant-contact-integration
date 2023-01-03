@@ -11,5 +11,5 @@
 **/
 
 /* Front end modules */
+$GLOBALS['TL_LANG']['FMD']['constant_contact_integration'] 	= array('Constant Contact Integration', 'Constant Contact Integration');
 $GLOBALS['TL_LANG']['FMD']['constant_contact_authorize']    = array('Constant Contact - Authorize', 'Use to authorize connection with Constant Contact');
-$GLOBALS['TL_LANG']['MOD']['constant_contact_authorize'] 	= array('Constant Contact Integration', 'Constant Contact Integration');
