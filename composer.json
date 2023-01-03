@@ -1,6 +1,6 @@
 {
     "name":"bright-cloud-studio/constant-contact-integration",
-    "description":"Adds Constant Contact integration to Contao's Form system",
+    "description":"Establishes a connection to Constant Contact and allows you to set up Forms to automatically create new Contacts within Constant Contact.",
     "homepage": "http://brightcloudstudio.com/",
     "keywords":["constant", "contact", "integration", "bright", "cloud", "studio"],
     "type":"contao-module",
