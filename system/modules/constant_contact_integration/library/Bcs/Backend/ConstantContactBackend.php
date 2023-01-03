@@ -52,6 +52,8 @@ class ConstantContactBackend extends \Backend
         
         // array to store our results until they are returned
         $arrLists = [];
+        
+        $arrLists[' '] = ' ';
 
         foreach($lists['lists'] as $entry){
             
@@ -69,23 +71,39 @@ class ConstantContactBackend extends \Backend
     public function optionsFields() {
         return array(
             '' => '',
-            'address_street' => 'address_street',
-            'address_city' => 'address_city',
-            'address_state' => 'address_state',
-            'address_postal_code' => 'address_postal_code',
-            'address_country' => 'address_country',
-            'anniversary' => 'anniversary',
-            'birthday_day' => 'birthday_day',
-            'birthday_month' => 'birthday_month',
-            'company_name' => 'company_name',
             'email_address' => 'email_address',
             'first_name' => 'first_name',
-            'job_title' => 'job_title',
             'last_name' => 'last_name',
-            'phone_numbers_home' => 'phone_numbers_home',
-            'phone_numbers_work' => 'phone_numbers_work',
-            'phone_numbers_mobile' => 'phone_numbers_mobile',
-            'phone_numbers_other' => 'phone_numbers_other'
+            'job_title' => 'job_title',
+            'company_name' => 'company_name',
+            'phone_number' => 'phone_number',
+            'anniversary' => 'anniversary',
+            'birthday_month' => 'birthday_month',
+            'birthday_day' => 'birthday_day',
+            'street' => 'street',
+            'city' => 'city',
+            'state' => 'state',
+            'postal_code' => 'postal_code',
+            'country' => 'country'
+            // old format not supported by this "Create or Update Contact" call
+            //'address_street' => 'address_street',
+            //'address_city' => 'address_city',
+            //'address_state' => 'address_state',
+            //'address_postal_code' => 'address_postal_code',
+            //'address_country' => 'address_country',
+            //'anniversary' => 'anniversary',
+            //'birthday_day' => 'birthday_day',
+            //'birthday_month' => 'birthday_month',
+            //'company_name' => 'company_name',
+            //'email_address' => 'email_address',
+            //'first_name' => 'first_name',
+            //'job_title' => 'job_title',
+            //'last_name' => 'last_name',
+            //'phone_numbers_home' => 'phone_numbers_home',
+            //'phone_numbers_work' => 'phone_numbers_work',
+            //'phone_numbers_mobile' => 'phone_numbers_mobile',
+            //'phone_numbers_other' => 'phone_numbers_other',
+            //'phone_number' => 'phone_number'
         );
     }
 }
