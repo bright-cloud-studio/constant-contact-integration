@@ -3,6 +3,7 @@
 namespace Bcs;
 
 use Contao\Database;
+use PHPFUI\ConstantContact\Definition;
 
 class Handler
 {
@@ -19,6 +20,11 @@ class Handler
             
             // set up our Constant Contact parameters
             $params = [];
+            
+            // array to store our address
+            $street_address = new \PHPFUI\ConstantContact\Definition\StreetAddress;
+            $street_address->kind = "home";
+            
             $params['list_memberships'] = array($formData['cci_list']);
             
             // loop through all this forms fields
@@ -27,6 +33,14 @@ class Handler
             {
                 // if this form field has a Constant Contact field linked
                 if($result->cci_linked_field != '') {
+                   
+                   // build our address array if we have the data for it
+                   if($result->cci_linked_field == 'street'){ $street_address->street = $submittedData[$result->name]; }
+                   if($result->cci_linked_field == 'city'){ $street_address->city = $submittedData[$result->name]; }
+                   if($result->cci_linked_field == 'state'){ $street_address->state = $submittedData[$result->name]; }
+                   if($result->cci_linked_field == 'postal_code'){ $street_address->postal_code = $submittedData[$result->name]; }
+                   if($result->cci_linked_field == 'country'){ $street_address->country = $submittedData[$result->name]; }
+                   
                     // set the linked field to the parameters we are going to pass to Constant Contact
                     $params[$result->cci_linked_field] = $submittedData[$result->name];
                     $has_params = 1;
@@ -73,6 +87,9 @@ class Handler
                 $client = new \PHPFUI\ConstantContact\Client($apiKey, $secret, $redirectURI);
                 $client->accessToken = $token_access;
                 $client->refreshToken = $token_refresh;
+                
+                // set our assembled address into our params
+                $params['street_address'] = $street_address;
                 
                 // Create a Contact object using the details from above
                 $contact = new \PHPFUI\ConstantContact\Definition\ContactCreateOrUpdateInput($params);
